@@ -1083,37 +1083,19 @@
 
 <body>
   <!-- ============================================================= -->
-  <!-- FILL-LATER TOKENS                                              -->
-  <!-- This is the SHELL build. Every showcase tile below ships wired  -->
-  <!-- to a bracketed [TOKEN] in place of its href (and data-lb-srcs   -->
-  <!-- for the Carousel), so the coming-soon pass renders it as a      -->
-  <!-- disabled "Coming Soon" card. Backfilling is a straight find-and- -->
-  <!-- replace: swap a [TOKEN] for its real path under                 -->
-  <!-- Sample Deliverables/<Funnel>/<Type>/ — keep spaces %20-encoded. -->
+  <!-- ASSET WIRING                                                   -->
+  <!-- All 20 showcase tiles are now wired to the real deliverables    -->
+  <!-- under Sample Deliverables/<Funnel>/<Type>/ (spaces %20-encoded, -->
+  <!-- the "&" in each funnel folder name encoded as %26). The two     -->
+  <!-- funnel folders are:                                             -->
+  <!--   Sample Deliverables/Paid Ads & Webinar Funnel/   (COLD_* tiles) -->
+  <!--   Sample Deliverables/Organic Content & VSL Funnel/ (WARM_* tiles) -->
+  <!-- To swap an asset, replace that tile's href (or data-lb-srcs for -->
+  <!-- the Carousel) with the new path — the coming-soon pass only     -->
+  <!-- disables a tile whose href still begins with a bracket "[".     -->
   <!--                                                                 -->
   <!-- STILL PLACEHOLDER (search + replace in place):                  -->
-  <!--   [COLD_AD_SINGLE]              -> Cold/Ad Creatives/Single.png -->
-  <!--   [COLD_AD_CAROUSEL]            -> Cold/Ad Creatives/Carousel/Slide 1.jpg -->
-  <!--   [COLD_AD_CAROUSEL_SRCS]       -> Cold/Ad Creatives/Carousel/Slide 1..5.jpg (pipe-separated) -->
-  <!--   [COLD_AD_VIDEO]               -> Cold/Ad Creatives/Video.pdf -->
-  <!--   [COLD_AD_STORY]               -> Cold/Ad Creatives/Story.jpg -->
-  <!--   [COLD_LP_REGISTRATION]        -> Cold/Landing Pages/Registration.png -->
-  <!--   [COLD_LP_THANKYOU]            -> Cold/Landing Pages/Thank You.jpeg -->
-  <!--   [COLD_LP_REPLAY]              -> Cold/Landing Pages/Replay.jpeg -->
-  <!--   [COLD_LP_CONFIRMATION]        -> Cold/Landing Pages/Confirmation.jpeg -->
-  <!--   [COLD_SEQ_PREWEBINAR_EMAIL]   -> Cold/Sequences/Pre-Webinar (Email).pdf -->
-  <!--   [COLD_SEQ_PREWEBINAR_WHATSAPP]-> Cold/Sequences/Pre-Webinar (Whatsapp Group).pdf -->
-  <!--   [COLD_SEQ_POSTWEBINAR_EMAIL]  -> Cold/Sequences/Post-Webinar (Email).pdf -->
-  <!--   [COLD_SEQ_POSTWEBINAR_WHATSAPP]-> Cold/Sequences/Post-Webinar (Whatsapp Group).pdf -->
-  <!--   [COLD_SEQ_PRECALL_EMAIL]      -> Cold/Sequences/Pre-Call (Email).pdf -->
-  <!--   [COLD_SEQ_PRECALL_WHATSAPP]   -> Cold/Sequences/Pre-Call (Whatsapp Group).pdf -->
-  <!--   [COLD_WEBINAR_SLIDESHOW]      -> Cold/Webinar/Slideshow.pdf -->
-  <!--   [WARM_LP_SALES]               -> Warm/Landing Pages/Sales.png -->
-  <!--   [WARM_LP_CONFIRMATION]        -> Warm/Landing Pages/Confirmation.jpeg -->
-  <!--   [WARM_SEQ_PRECALL_EMAIL]      -> Warm/Sequences/Pre-Call (Email).pdf -->
-  <!--   [WARM_SEQ_PRECALL_WHATSAPP]   -> Warm/Sequences/Pre-Call (Whatsapp Group).pdf -->
-  <!--   [WARM_VSL_SCRIPT]             -> Warm/Video Sales Letter/Script.pdf -->
-  <!--   [DOMAIN]                      hub domain (reserved; no visible ref yet) -->
+  <!--   [DOMAIN]   hub domain (reserved; no visible ref yet)          -->
   <!--                                                                 -->
   <!-- ALREADY LIVE (do not touch):                                    -->
   <!--   Hero Loom embed + Miro Client Results board + both Calendly links. -->
@@ -1200,7 +1182,7 @@
         <!-- ===================================================== -->
         <div class="row-widget fade-up mt-10">
           <button class="info-btn" type="button" data-info="sec-cold"><span aria-hidden="true">i</span></button>
-          <h3 class="row-heading">Paid Ads To Webinar Funnel</h3>
+          <h3 class="row-heading">Paid Ads & Webinar Funnel</h3>
 
           <!-- Type: Ad Creatives -->
           <div class="sub-widget mt-8">
@@ -1214,7 +1196,7 @@
                 <p class="sample-label">Single</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_AD_SINGLE]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Single.png"
                      data-lb data-lb-type="image" data-lb-title="Single (static) ad creative"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1229,9 +1211,9 @@
                 <p class="sample-label">Carousel</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_AD_CAROUSEL]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Carousel/Slide%201.jpg"
                      data-lb data-lb-type="carousel" data-lb-title="Carousel ad creative"
-                     data-lb-srcs="[COLD_AD_CAROUSEL_SRCS]"
+                     data-lb-srcs="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Carousel/Slide%201.jpg|Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Carousel/Slide%202.jpg|Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Carousel/Slide%203.jpg|Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Carousel/Slide%204.jpg|Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Carousel/Slide%205.jpg"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
                     <span class="cta-sub">Click here to open it up...</span>
@@ -1245,7 +1227,7 @@
                 <p class="sample-label">Video</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_AD_VIDEO]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Video.pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Video ad script"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1260,7 +1242,7 @@
                 <p class="sample-label">Story</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_AD_STORY]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Story.jpg"
                      data-lb data-lb-type="image" data-lb-title="Story ad creative"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1285,7 +1267,7 @@
                 <p class="sample-label">Registration</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_LP_REGISTRATION]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Landing%20Pages/Registration.png"
                      data-lb data-lb-type="scroll-image" data-lb-title="Registration page"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1300,7 +1282,7 @@
                 <p class="sample-label">Thank You</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_LP_THANKYOU]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Landing%20Pages/Thank%20You.png"
                      data-lb data-lb-type="scroll-image" data-lb-title="Thank you page"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1315,7 +1297,7 @@
                 <p class="sample-label">Replay</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_LP_REPLAY]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Landing%20Pages/Replay%20Page.png"
                      data-lb data-lb-type="scroll-image" data-lb-title="Replay page"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1330,7 +1312,7 @@
                 <p class="sample-label">Confirmation</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_LP_CONFIRMATION]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Landing%20Pages/Confirmation.png"
                      data-lb data-lb-type="scroll-image" data-lb-title="Confirmation page"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1355,7 +1337,7 @@
                 <p class="sample-label">Pre-Webinar<span class="sample-sub">(Email)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_SEQ_PREWEBINAR_EMAIL]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Sequences/Pre-Webinar%20(Email).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Pre-webinar email sequence"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1370,7 +1352,7 @@
                 <p class="sample-label">Pre-Webinar<span class="sample-sub">(WhatsApp Group)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_SEQ_PREWEBINAR_WHATSAPP]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Sequences/Pre-Webinar%20(Whatsapp%20Group).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Pre-webinar WhatsApp group messages"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1385,7 +1367,7 @@
                 <p class="sample-label">Post-Webinar<span class="sample-sub">(Email)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_SEQ_POSTWEBINAR_EMAIL]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Sequences/Post-Webinar%20(Email).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Post-webinar email sequence"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1400,7 +1382,7 @@
                 <p class="sample-label">Post-Webinar<span class="sample-sub">(WhatsApp Group)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_SEQ_POSTWEBINAR_WHATSAPP]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Sequences/Post-Webinar%20(Whatsapp%20Group).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Post-webinar WhatsApp group messages"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1415,7 +1397,7 @@
                 <p class="sample-label">Pre-Call<span class="sample-sub">(Email)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_SEQ_PRECALL_EMAIL]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Sequences/Pre-Call%20(Email).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Pre-call email sequence"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1430,7 +1412,7 @@
                 <p class="sample-label">Pre-Call<span class="sample-sub">(WhatsApp Group)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_SEQ_PRECALL_WHATSAPP]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Sequences/Pre-Call%20(Whatsapp%20Group).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Pre-call WhatsApp group messages"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1455,7 +1437,7 @@
                 <p class="sample-label">Slideshow</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[COLD_WEBINAR_SLIDESHOW]"
+                     href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Webinar/Slideshow.pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Webinar slideshow"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1474,7 +1456,7 @@
         <!-- ===================================================== -->
         <div class="row-widget fade-up mt-10">
           <button class="info-btn" type="button" data-info="sec-warm"><span aria-hidden="true">i</span></button>
-          <h3 class="row-heading">Organic Content To VSL Funnel</h3>
+          <h3 class="row-heading">Organic Content & VSL Funnel</h3>
 
           <!-- Type: Landing Pages -->
           <div class="sub-widget mt-8">
@@ -1488,7 +1470,7 @@
                 <p class="sample-label">Sales</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[WARM_LP_SALES]"
+                     href="Sample%20Deliverables/Organic%20Content%20%26%20VSL%20Funnel/Landing%20Pages/Sales.png"
                      data-lb data-lb-type="scroll-image" data-lb-title="Sales page"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1503,7 +1485,7 @@
                 <p class="sample-label">Confirmation</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[WARM_LP_CONFIRMATION]"
+                     href="Sample%20Deliverables/Organic%20Content%20%26%20VSL%20Funnel/Landing%20Pages/Confirmation.png"
                      data-lb data-lb-type="scroll-image" data-lb-title="Confirmation page"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1528,7 +1510,7 @@
                 <p class="sample-label">Pre-Call<span class="sample-sub">(Email)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[WARM_SEQ_PRECALL_EMAIL]"
+                     href="Sample%20Deliverables/Organic%20Content%20%26%20VSL%20Funnel/Sequences/Pre-Call%20(Email).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Pre-call email sequence"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1543,7 +1525,7 @@
                 <p class="sample-label">Pre-Call<span class="sample-sub">(WhatsApp Group)</span></p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[WARM_SEQ_PRECALL_WHATSAPP]"
+                     href="Sample%20Deliverables/Organic%20Content%20%26%20VSL%20Funnel/Sequences/Pre-Call%20(Whatsapp%20Group).pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Pre-call WhatsApp group messages"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1568,7 +1550,7 @@
                 <p class="sample-label">Script</p>
                 <div class="mt-6">
                   <a class="cta-button cta-sm"
-                     href="[WARM_VSL_SCRIPT]"
+                     href="Sample%20Deliverables/Organic%20Content%20%26%20VSL%20Funnel/Video%20Sales%20Letter/Script.pdf"
                      data-lb data-lb-type="pdf" data-lb-title="Video sales letter script"
                      target="_blank" rel="noopener noreferrer">
                     <span class="cta-main">Get A Closer View</span>
@@ -1706,11 +1688,11 @@
       var INFO = {
         // --- Sections ---
         "sec-cold": {
-          title: "Paid Ads To Webinar Funnel",
+          title: "Paid Ads & Webinar Funnel",
           body: "Cold traffic leads registering for and attending a free live masterclass which teaches them something and sells them on your offer before scheduling a sales call."
         },
         "sec-warm": {
-          title: "Organic Content To VSL Funnel",
+          title: "Organic Content & VSL Funnel",
           body: "Warm traffic leads watching a free recorded training which teaches them something and sells them on your offer before scheduling a sales call."
         },
         // --- Types ---
