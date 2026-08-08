@@ -1,3 +1,4 @@
-# Large local video source — do not commit (exceeds GitHub file limits)
-Video.mp4
+# Ignore all local MP4 sources (e.g. the 844 MB raw Video-source.mp4) EXCEPT the
+# committed, compressed hero video the site actually serves.
 *.mp4
+!Video.mp4
