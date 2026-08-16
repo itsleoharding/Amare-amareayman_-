@@ -835,6 +835,39 @@
       color: var(--muted);
     }
 
+    /* ============ PART COLUMN — vertical one-card scroller ============ */
+    /* Types WITH parts render each part as a column in the horizontal type      */
+    /* slider; WITHIN a column its instance cards scroll VERTICALLY inside a      */
+    /* window exactly one instance-card tall (height set by JS), snapping one at  */
+    /* a time — so the widget never grows tall just because a part has several    */
+    /* instances. No-part types keep their horizontal slider untouched. Card      */
+    /* styling is unchanged; only the scroll direction + fixed height differ.     */
+    .part-scroll {
+      position: relative;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(177, 247, 204, 0.4) transparent;
+    }
+    .part-scroll::-webkit-scrollbar { width: 6px; }
+    .part-scroll::-webkit-scrollbar-track { background: transparent; }
+    .part-scroll::-webkit-scrollbar-thumb {
+      background-color: rgba(177, 247, 204, 0.3);
+      border-radius: 9999px;
+    }
+    /* Cards fill the column and snap to the top of the window, one per view. */
+    .part-scroll .block-card {
+      width: 100%;
+      margin-top: 0;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .part-scroll { scroll-behavior: auto; }
+    }
+
     /* ============ CALL TO ACTION BUTTON ============ */
     /* Flat sage with dark text (the agency's colours). Two-line structure:    */
     /* bold serif main line + mono sub-line, with a hover lift.                */
@@ -2249,6 +2282,62 @@
         });
       }, { rootMargin: "200px 0px" });
       items.forEach(function (it) { it.win.__dp = it; io.observe(it.win); });
+    })();
+
+    // ===========================================================
+    // PART COLUMNS — vertical one-card-tall scrollers (types WITH parts)
+    // A type that groups its instances into PARTS renders each part as a column
+    // in the horizontal type slider; within a column, its instance cards now
+    // scroll VERTICALLY inside a window exactly one instance-card tall (snap, one
+    // at a time), so the widget never grows tall with several instances. Types
+    // with NO parts keep their horizontal slider untouched. Runs after the
+    // preview pass, so previews already live inside the cards; info buttons and
+    // Coming-Soon state ride along on each card unchanged.
+    // ===========================================================
+    (function () {
+      // Part columns are the direct-child <div>s of a slider; no-part sliders
+      // hold <article class="block-card"> directly, so those are skipped.
+      document.querySelectorAll(".deliverables-slider > div").forEach(function (col) {
+        var cards = [];
+        Array.prototype.forEach.call(col.children, function (ch) {
+          if (ch.classList && ch.classList.contains("block-card")) cards.push(ch);
+        });
+        if (!cards.length) return;
+        col.classList.add("part-col");
+
+        // Move the instance cards into a fixed-height vertical snap scroller,
+        // keeping the part's info button + label above it.
+        var scroll = document.createElement("div");
+        scroll.className = "part-scroll mt-6";
+        col.insertBefore(scroll, cards[0]);
+        cards.forEach(function (c) { c.classList.remove("mt-6"); scroll.appendChild(c); });
+
+        // Vertical "scroll for more" affordance, shown only when the column
+        // holds more than one instance (mirrors the horizontal "Swipe to browse").
+        if (cards.length > 1) {
+          var hint = document.createElement("p");
+          hint.className = "slider-hint mt-4";
+          hint.innerHTML = "Scroll &darr;";
+          col.appendChild(hint);
+        }
+
+        // Window height = the tallest instance card (one card tall), so every
+        // card's CTA stays fully reachable. Re-synced as lazy previews load
+        // (cards grow) and on resize.
+        function sync() {
+          var h = 0;
+          cards.forEach(function (c) { if (c.offsetHeight > h) h = c.offsetHeight; });
+          if (h) scroll.style.height = h + "px";
+        }
+        sync();
+        if ("ResizeObserver" in window) {
+          var ro = new ResizeObserver(sync);
+          cards.forEach(function (c) { ro.observe(c); });
+        } else {
+          window.addEventListener("resize", sync);
+          window.addEventListener("load", sync);
+        }
+      });
     })();
 
     // ===========================================================
